@@ -1,0 +1,29 @@
+'''这是猜数游戏的新版，采用了一些较先进的代码和方法，而且优化了用户体验'''
+import random
+print("----------------猜数游戏！！！---------------------")
+print('''游戏规则：
+猜一个数字(0-10)
+这个数字是随机的
+每次都不一样
+八次之内猜到了
+你就赢了
+否则
+嘿嘿嘿''')
+answer = random.randint(1,10)
+inputnumber = input("猜一个数吧:")
+guess = int(inputnumber)
+for i in range(7):
+    if guess == int(answer):
+        print("哟，还不错，居然猜对了!小伙子有前途~")
+        import sys
+        input("随便按一下键盘就乖乖退出了！")
+        sys.exit(0)
+    else:
+        if guess < int(answer):
+            print("不对不对，干嘛猜个这么小的数字！")
+        if guess > int(answer):
+            print("不对不对，为啥猜个这么大的数字！")
+        inputnumber = input("再猜一次吧:")
+        guess = int(inputnumber)
+print("猜了8次都猜不出来！哼，不陪你玩了！")
+input("戳一下键盘和我说再见吧")
